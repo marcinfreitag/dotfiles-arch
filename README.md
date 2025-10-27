@@ -1,4 +1,4 @@
-# archinstall
+# dotfiles-arch
 Automated deployment of my archlinux setup with dwm
 
 The installation script and dotfiles are managed using [chezmoi](https://www.chezmoi.io/).
@@ -12,7 +12,7 @@ Check out the [Quick Start](https://www.chezmoi.io/quick-start/) page.
 With a single line of code (public):
 
 ```sh
-sudo pacman -Sy --noconfirm chezmoi && chezmoi init https://github.com/marcinfreitag/archinstall.git && chezmoi apply
+sudo pacman -Sy --noconfirm chezmoi && chezmoi init https://github.com/marcinfreitag/dotfiles-arch.git && chezmoi apply
 ```
 
 ### Update
