@@ -9,35 +9,35 @@ yay -Syu --noconfirm
 echo ":: Install base packages"
 yay -Sy --noconfirm base-devel chezmoi git
 
-echo ":: Install xorg-server"
-yay -Sy --noconfirm xf86-video-intel xorg-xsetroot xorg-server xorg-xinit terminus-font
+#echo ":: Install xorg-server"
+#yay -Sy --noconfirm xf86-video-intel xorg-xsetroot xorg-server xorg-xinit terminus-font
 
-echo ":: Install suckless dependencies"
-yay -Sy base-devel git fontconfig freetype2 libx11 libxft libxineramaecho ":: Install install intel driver and xorg tools"
+#echo ":: Install suckless dependencies"
+#yay -Sy base-devel git fontconfig freetype2 libx11 libxft libxineramaecho ":: Install install intel driver and xorg tools"
 
-echo ":: Build and install suckless binaries"
-mkdir -p ~/.local/src
+#echo ":: Build and install suckless binaries"
+#mkdir -p ~/.local/src
 
-git clone git://git.suckless.org/st ~/.local/src/st
-git clone git://git.suckless.org/dmenu ~/.local/src/dmenu
-git clone git://git.suckless.org/dwm ~/.local/src/dwm
-git clone git://git.suckless.org/slstatus ~/.local/src/slstatus
+#git clone git://git.suckless.org/st ~/.local/src/st
+#git clone git://git.suckless.org/dmenu ~/.local/src/dmenu
+#git clone git://git.suckless.org/dwm ~/.local/src/dwm
+#git clone git://git.suckless.org/slstatus ~/.local/src/slstatus
 
-pushd ~/.local/src/st
-make clean && sudo make install
-popd
+#pushd ~/.local/src/st
+#make clean && sudo make install
+#popd
 
-pushd ~/.local/src/dmenu
-make clean && sudo make install
-popd
+#pushd ~/.local/src/dmenu
+#make clean && sudo make install
+#popd
 
-pushd ~/.local/src/dwm
-make clean && sudo make install
-popd
+#pushd ~/.local/src/dwm
+#make clean && sudo make install
+#popd
 
-pushd ~/.local/src/slstatus
-make clean && sudo make install
-popd
+#pushd ~/.local/src/slstatus
+#make clean && sudo make install
+#popd
 
 # st's dependencies
 #yay -Sy --noconfirm fontconfig freetype2 graphite harfbuzz libxrender libxft
