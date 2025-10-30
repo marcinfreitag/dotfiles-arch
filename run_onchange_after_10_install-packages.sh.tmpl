@@ -9,6 +9,10 @@ yay -Syu --noconfirm
 echo ":: Install base packages"
 yay -Sy --noconfirm base-devel chezmoi git
 
+echo ":: Install display manager"
+yay -Sy --noconfirm base-devel chezmoi git
+sudo systemctl enable --now ly.service
+
 #echo ":: Install xorg-server"
 #yay -Sy --noconfirm xf86-video-intel xorg-xsetroot xorg-server xorg-xinit terminus-font
 
@@ -48,5 +52,5 @@ yay -Sy --noconfirm base-devel chezmoi git
 #yay -S --noconfirm  libx11 webkit2gtk
 
 echo ":: Install CLI apps"
-yay -Sy --noconfirm htop less man-db neovim
+yay -Sy --noconfirm htop less man-db neovim fastfetch
 
