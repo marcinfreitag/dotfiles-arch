@@ -1,0 +1,34 @@
+# 10-aliases
+
+# General
+alias c='clear'
+alias ff='fastfetch'
+
+# Power management
+alias shutdown='systemctl poweroff'
+alias reboot='systemctl reboot'
+
+# Editor
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
+# Git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gpl='git pull'
+alias gst='git stash'
+alias gsp='git stash; git pull'
+alias gfo='git fetch origin'
+alias gcheck='git checkout'
+alias gcredential='git config credential.helper store'
+
+# YouTube
+alias downloadmp3='yt-dlp -f bestaudio -x --audio-format mp3'
+alias downloadmp4='yt-dlp --yes-playlist -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]''
+alias youtube='mpv --ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best"'
+
+# System utilities
+alias update-grub='grub2-mkconfig -o /boot/grub2/grub.cfg'
