@@ -3,9 +3,6 @@
 # install-packages.sh - install software from repos
 #
 
-echo ":: Update system packages"
-yay -Syu --noconfirm
-
 echo ":: Install base packages"
 yay -Sy --noconfirm base-devel chezmoi git
 
@@ -52,5 +49,18 @@ sudo systemctl enable --now ly.service
 #yay -S --noconfirm  libx11 webkit2gtk
 
 echo ":: Install CLI apps"
-yay -Sy --noconfirm htop less man-db neovim fastfetch
+yay -Sy --noconfirm htop less man-db neovim fastfetch gnupg pass pinentry-curses
+
+echo ":: Install pass"
+yay -Sy --noconfirm gnupg pass pinentry-curses
+
+echo ":: Setting up hostname"
+if [[ "$(hostnamectl hostname)" != {{ .ws_hostname  | quote }} ]]; then
+	sudo hostnamectl hostname {{ .ws_hostname }}
+fi
+
+echo ":: Enabling gpg-agent"
+systemctl --user enable --now gpg-agent.socket
+systemctl --user enable --now gpg-agent-ssh.socket
+
 
