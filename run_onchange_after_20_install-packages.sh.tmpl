@@ -4,9 +4,10 @@
 #
 
 echo ":: Install base packages"
-yay -Sy --noconfirm base-devel chezmoi git
+yay -Sy --noconfirm --needed base-devel git linux linux-firmware btrfs-progs intel-ucode chezmoi
 
 echo ":: Install display manager"
-yay -Sy --noconfirm brightnessctl ly
+yay -Sy --noconfirm --needed brightnessctl ly
+# edit global config file, create directory in user's cache for logs
 sudo systemctl enable ly
 
