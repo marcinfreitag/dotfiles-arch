@@ -4,7 +4,7 @@
 #
 
 echo ":: Installing yay"
-yayCacheDir="~/.cache/yay"
+yayCacheDir="/home/$(whoami)/.cache/yay"
 mkdir -p $yayCacheDir
 pushd $yayCacheDir
 sudo pacman -Sy --noconfirm --needed base-devel git
