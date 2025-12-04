@@ -1,4 +1,2 @@
 # 30-autostart
 
-# pywal
-(cat ~/.cache/wal/sequences &)
