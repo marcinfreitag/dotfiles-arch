@@ -11,8 +11,8 @@ yay -Sy --noconfirm --needed man-pages man-db tldr
 sudo mandb
 
 echo ":: Install display manager"
-yay -Sy --noconfirm --needed gdm
-sudo systemctl enable gdm
+yay -Sy --noconfirm --needed brightnessctl ly 
+sudo systemctl enable ly
 
 echo ":: Install bluetooth support"
 yay -Sy --noconfirm --needed bluez bluez-utils
@@ -33,7 +33,7 @@ echo ":: Install Intel graphics driver"
 yay -Sy --noconfirm --needed xorg-server xorg-xinit mesa libva-intel-driver intel-media-driver vulkan-intel
 
 echo ":: Install hyprland"
-yay -Sy --noconfirm --needed hyprland dunst kitty otf-font-awesome waybar uwsm nautilus wofi noto-fonts noto-fonts-emoji xdg-desktop-portal-gtk xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit grim slurp gcr brightnessctl hyprpaper hyprpicker hypridle hyprlock
+yay -Sy --noconfirm --needed hyprland dunst kitty otf-font-awesome waybar uwsm nautilus wofi noto-fonts noto-fonts-emoji ttf-ubuntu-mono-nerd ttf-ubuntu-nerd xdg-desktop-portal-gtk xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit grim slurp gcr brightnessctl hyprpaper hyprpicker hypridle hyprlock
 
 echo ":: Install GUI apps"
 yay -Sy --noconfirm --needed firefox thunderbird libreoffice-fresh
