@@ -4,7 +4,7 @@
 #
 
 echo ":: Install base packages"
-yay -Sy --noconfirm --needed base-devel git linux linux-firmware btrfs-progs intel-ucode chezmoi
+yay -Sy --noconfirm --needed base-devel git linux linux-firmware btrfs-progs intel-ucode
 
 echo ":: Install documentation"
 yay -Sy --noconfirm --needed man-pages man-db tldr
@@ -14,9 +14,40 @@ echo ":: Install display manager"
 yay -Sy --noconfirm --needed gdm
 sudo systemctl enable gdm
 
+echo ":: Install bluetooth support"
+yay -Sy --noconfirm --needed bluez bluez-utils
+sudo systemctl --now enable bluetooth
+
+echo ":: Install sound system"
+yay -Sy --noconfirm --needed pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber
+systemctl --user --now enable pipewire pipewire-pulse wireplumber
+
 echo ":: Install CLI tools"
-yay -Sy --noconfirm --needed htop exfat-utils
+yay -Sy --noconfirm --needed htop exfat-utils chezmoi neovim openssh htop wget iwd wireless_tools wpa_supplicant smartmontools xdg-utils xdg-user-dirs pass
+xdg-user-dirs-update
 # install yazi
 yay -Sy --noconfirm --needed yazi poppler fd ffmpeg 7zip jq ripreg fzf zoxide resvg imagemagick wl-clipboard
 ya pkg add yazi-rs/plugins:mount
+
+echo ":: Install Intel graphics driver"
+yay -Sy --noconfirm --needed xorg-server xorg-xinit mesa libva-intel-driver intel-media-driver vulkan-intel
+
+echo ":: Install hyprland"
+yay -Sy --noconfirm --needed hyprland dunst kitty otf-font-awesome waybar uwsm nautilus wofi noto-fonts noto-fonts-emoji xdg-desktop-portal-gtk xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit grim slurp gcr brightnessctl hyprpaper hyprpicker hypridle hyprlock
+
+echo ":: Install GUI apps"
+yay -Sy --noconfirm --needed firefox thunderbird libreoffice-fresh
+
+echo ":: Installation complete. Please reboot when ready."
+
+
+
+
+
+
+
+
+
+
+
 
