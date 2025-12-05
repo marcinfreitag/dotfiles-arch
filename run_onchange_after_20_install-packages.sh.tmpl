@@ -6,19 +6,17 @@
 echo ":: Install base packages"
 yay -Sy --noconfirm --needed base-devel git linux linux-firmware btrfs-progs intel-ucode chezmoi
 
-echo ":: Install CLI tools"
-yay -Sy --noconfirm --needed htop exfat-utils
-
 echo ":: Install documentation"
-yay -Sy --noconfirm --needed man-pages man-db
+yay -Sy --noconfirm --needed man-pages man-db tldr
 sudo mandb
 
 echo ":: Install display manager"
-yay -Sy --noconfirm --needed brightnessctl ly
-# edit global config file, create directory in user's cache for logs
-sudo systemctl enable ly
+yay -Sy --noconfirm --needed gdm
+sudo systemctl enable gdm
 
-echo ":: Install yazi"
+echo ":: Install CLI tools"
+yay -Sy --noconfirm --needed htop exfat-utils
+# install yazi
 yay -Sy --noconfirm --needed yazi poppler fd ffmpeg 7zip jq ripreg fzf zoxide resvg imagemagick wl-clipboard
 ya pkg add yazi-rs/plugins:mount
 

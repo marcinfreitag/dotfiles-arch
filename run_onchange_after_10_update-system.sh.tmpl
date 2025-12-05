@@ -3,5 +3,10 @@
 # update-system.sh - update system
 #
 
-echo ":: Update system packages"
-yay -Syu --noconfirm
+if ! pacman -Qs yay > /dev/null; then
+  echo ":: Update system packages (packman)"
+  packman -Syu --noconfirm
+else
+  echo ":: Update system packages (yay)"
+  yay -Syu --noconfirm
+fi

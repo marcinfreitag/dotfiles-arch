@@ -1,16 +1,21 @@
 #!/usr/bin/env bash
 #
-# install-yay.sh - install yay AUR helper
+# install-yay.sh - install yay AUR helper, when absent
 #
 
-echo ":: Installing yay"
-yayCacheDir="/home/$(whoami)/.cache/yay"
-mkdir -p $yayCacheDir
-pushd $yayCacheDir
-sudo pacman -Sy --noconfirm --needed base-devel git
-git clone https://aur.archlinux.org/yay.git
-pushd yay
-makepkg -si --noconfirm
-popd
-popd
+if ! pacman -Qs yay > /dev/null; then
+  echo ":: Installing yay"
+  yayCacheDir="/home/$(whoami)/.cache/yay"
+  mkdir -p $yayCacheDir
+  pushd $yayCacheDir
+  sudo pacman -Sy --noconfirm --needed base-devel git
+  git clone https://aur.archlinux.org/yay.git
+  pushd yay
+  makepkg -si --noconfirm
+  popd
+  popd
+else
+    echo "Yay is installed. Double checking"
+    yay -Sy --noconfirm --needed yay
+fi
 
