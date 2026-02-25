@@ -1,5 +1,5 @@
 # dotfiles-arch
-Automated deployment of my archlinux setup with dwm
+Automated deployment of my archlinux setup
 
 The installation script and dotfiles are managed using [chezmoi](https://www.chezmoi.io/).
 

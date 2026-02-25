@@ -29,14 +29,17 @@ xdg-user-dirs-update
 yay -Sy --noconfirm --needed yazi poppler fd ffmpeg 7zip jq ripreg fzf zoxide resvg imagemagick wl-clipboard
 ya pkg add yazi-rs/plugins:mount
 
-echo ":: Install Intel graphics driver"
-yay -Sy --noconfirm --needed xorg-server xorg-xinit mesa libva-intel-driver intel-media-driver vulkan-intel
+#echo ":: Install Intel graphics driver"
+#yay -Sy --noconfirm --needed xorg-server xorg-xinit mesa libva-intel-driver intel-media-driver vulkan-intel
 
-echo ":: Install hyprland"
-yay -Sy --noconfirm --needed hyprland dunst kitty otf-font-awesome waybar uwsm nautilus wofi noto-fonts noto-fonts-emoji ttf-firacode-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd xdg-desktop-portal-gtk xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit grim slurp gcr brightnessctl hyprpaper hyprpicker hypridle hyprlock
+#echo ":: Install hyprland"
+#yay -Sy --noconfirm --needed hyprland dunst kitty otf-font-awesome waybar uwsm nautilus wofi noto-fonts noto-fonts-emoji ttf-firacode-nerd ttf-ubuntu-mono-nerd ttf-ubuntu-nerd xdg-desktop-portal-gtk xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit grim slurp gcr brightnessctl hyprpaper hyprpicker hypridle hyprlock
+
+echo ":: Install mango-wc and basic environment"
+yay -Sy --noconfirm --needed mangowc kitty wl-clipboard wmenu grim slurp swaybg ttf-jetbrains-mono-nerd
 
 echo ":: Install GUI apps"
-yay -Sy --noconfirm --needed firefox thunderbird libreoffice-fresh
+yay -Sy --noconfirm --needed noto-fonts-noto-fonts-emoji firefox thunderbird libreoffice-fresh
 
 echo ":: Installation complete. Please reboot when ready."
 
