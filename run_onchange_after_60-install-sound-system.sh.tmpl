@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo ":: Install sound system"
+yay -Sy --noconfirm --needed pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber
+systemctl --user --now enable pipewire pipewire-pulse wireplumber
+

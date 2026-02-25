@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-#
-# install-yay.sh - install yay AUR helper, when absent
-#
 
+# Install yay from git 
 if ! pacman -Qs yay > /dev/null; then
   echo ":: Installing yay"
   yayCacheDir="/home/$(whoami)/.cache/yay"

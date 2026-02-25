@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo ":: Install base system"
+yay -Sy --noconfirm --needed base-devel git linux linux-firmware btrfs-progs intel-ucode man-pages man-db tldr
+sudo mandb

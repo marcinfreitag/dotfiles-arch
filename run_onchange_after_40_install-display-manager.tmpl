@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo ":: Install display manager"
+yay -Sy --noconfirm --needed brightnessctl ly 
+sudo systemctl enable ly@tty2.service
+

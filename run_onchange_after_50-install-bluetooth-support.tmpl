@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo ":: Install bluetooth support"
+yay -Sy --noconfirm --needed bluez bluez-utils
+sudo systemctl --now enable bluetooth
+
