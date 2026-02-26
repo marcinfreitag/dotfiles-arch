@@ -1,4 +1,4 @@
-// -*- mode: jsonc -*-
+// -*- mode: jsonc -*
 //
 // config.jsonc - waybar config
 //
@@ -6,12 +6,12 @@
 {
   // The order of the modules
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
+    "ext/workspaces",
+    "dwl/window"
   ],
   "modules-center": [
     "clock",
-    "hyprland/language"
+    "custom/language"
   ],
   "modules-right": [
     "tray",
@@ -28,10 +28,10 @@
 
   // Modules configuration
 
- "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace r-1",
-    "on-scroll-down": "[[ $(hyprctl activeworkspace -j | jq -r '.id') -lt 5 ]] && hyprctl dispatch workspace r+1 || hyprctl dispatch workspace 5",
-    "active-only": false,
+ "ext/workspaces": {
+    //"on-scroll-up": "hyprctl dispatch workspace r-1",
+    //"on-scroll-down": "[[ $(hyprctl activeworkspace -j | jq -r '.id') -lt 5 ]] && hyprctl dispatch workspace r+1 || hyprctl dispatch workspace 5",
+    "ignore-hidden": false,
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
@@ -42,7 +42,7 @@
     }
   },
 
-  "hyprland/window": {
+  "ext/window": {
     "format": "{}",
     "max-length": 50,
     "rewrite": {
@@ -59,9 +59,12 @@
     "tooltip-format": "<tt><big>{calendar}</big></tt>"
   },
 
-  "hyprland/language": {
-    "format": "{short}",
-    "on-click": "hyprctl switchxkblayout all next"
+  "custom/language": {
+    "format": "{text}",
+    "exec": "mmsg -k | cut -d \" \" -f 3",
+    "on-click": "mmsg -d switch_keyboard_layout; pkill -SIGRTMIN+1 waybar",
+    "signal": 1
+    //"on-click": "hyprctl switchxkblayout all next"
   },
 
   "network": {
